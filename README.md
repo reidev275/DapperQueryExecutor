@@ -49,3 +49,20 @@ public class Person
   public int Age { get; set; }
 }
 ```
+
+
+Usage with Ninject
+------------------
+By binding all requirements for an IDapperQueryExecutor through an IOC framework we can more easily call repositories
+
+```csharp
+public class DapperModule : NinjectModule
+{
+	public override void Load()
+	{
+		Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>();
+	}
+}
+
+
+```
