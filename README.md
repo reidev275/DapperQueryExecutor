@@ -53,7 +53,7 @@ public class Person
 
 Usage with Ninject
 ------------------
-By binding all requirements for an IDapperQueryExecutor through an IOC framework we can more easily call repositories
+By binding all requirements for an IDapperQueryExecutor through an IOC framework we now have a central place to determine which database our app uses.
 
 ```csharp
 public class DapperModule : NinjectModule
