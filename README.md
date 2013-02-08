@@ -15,9 +15,9 @@ Example Repository
 
 ```csharp
 
-public class DapperPersonRepository : DapperRepository, IMyRepository
+public class DapperPeopleRepository : DapperRepository, IPeopleRepository
 {
-  public DapperPersonRepository(IDapperQueryExecutor queryExecutor, string connectionString)
+  public DapperPeopleRepository(IDapperQueryExecutor queryExecutor, string connectionString)
     : base(queryExecutor, connectionString) {  }
     
   //Simple query  
