@@ -8,8 +8,38 @@ Why should I use this over Dapper?
 [Dapper](https://github.com/SamSaffron/dapper-dot-net) is a fantastic tool and without it this project would not be possible, but it makes unit testing your repositories difficult because it was created as an extension method to the IDBConnection interface.
 This library allows your repositories to be database agnostic and fully testable through the use of the command pattern.
 
-Example Repository
-------------------
+Given the following Person class
+```csharp
+public class Person
+{
+  public string FirstName { get; set; }
+  public string LastName { get; set; }
+  public int Age { get; set; }
+}
+```
+
+Command pattern way:
+```csharp
+var query = new DapperQuery("myConnectionString")
+  {
+    Sql = "Select FirstName, LastName, Age FROM People (NOLOCK)"
+  };
+IDapperQueryExecutor queryExecutor = new SqlDapperQueryExecutor();
+IEnumerable<Person> people = queryExecutor.Query<Person>(query);
+```
+
+Dapper's way:
+```csharp
+IEnumerable<Person> people;
+using (var connection = new SqlConnection("myConnectionString"))
+{
+  connection.Open();
+  people = connection.Query<Person>("Select FirstName, LastName, Age FROM People (NOLOCK)")
+}
+```
+
+Recommended usage with dependency injection
+-------------------------------------------
 
 ```csharp
 
