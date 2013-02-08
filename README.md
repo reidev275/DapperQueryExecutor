@@ -58,11 +58,9 @@ By binding all requirements for an IDapperQueryExecutor through an IOC framework
 ```csharp
 public class DapperModule : NinjectModule
 {
-	public override void Load()
-	{
-		Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>();
-	}
+  public override void Load()
+  {
+    Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>();
+  }
 }
-
-
 ```
