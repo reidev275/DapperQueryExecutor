@@ -49,7 +49,8 @@ public class Person
   public int Age { get; set; }
 }
 ```
-
+As you can see, we can easily mock an IDapperQueryExecutor and fully unit test our repository without
+actually hitting the database. Also note that our repository doesn't have a single reference to System.Data.
 
 Usage with Ninject
 ------------------
