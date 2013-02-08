@@ -1,11 +1,11 @@
 DapperQueryExecutor
 ===================
 
-Leverages Dapper's simple object mapping to create a command pattern approach rather than an extension method approach.
+Leverages [Dapper's](https://github.com/SamSaffron/dapper-dot-net) simple object mapping to create a command pattern approach rather than an extension method approach.
 
 Why should I use this over Dapper?
 ----------------------------------
-Dapper is a fantastic tool and without it this project would not be possible, but it makes unit testing your repositories difficult because it was created as an extension method to the IDBConnection interface.
+[Dapper](https://github.com/SamSaffron/dapper-dot-net) is a fantastic tool and without it this project would not be possible, but it makes unit testing your repositories difficult because it was created as an extension method to the IDBConnection interface.
 This library allows your repositories to be database agnostic and fully testable through the use of the command pattern.
 
 Example Repository
