@@ -1,8 +1,6 @@
 DapperQueryExecutor
 ===================
 
-What is this?
--------------
 Leverages Dapper's simple object mapping to create a command pattern approach rather than an extension method approach.
 
 Why should I use this over Dapper?
