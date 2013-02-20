@@ -1,7 +1,7 @@
 DapperQueryExecutor
 ===================
 
-Leverages [Dapper's](https://github.com/SamSaffron/dapper-dot-net) simple object mapping to create a command pattern approach rather than an extension method approach.
+Leverages [Dapper's](https://github.com/SamSaffron/dapper-dot-net) simple object mapping with a command pattern approach rather than an extension method approach.
 
 Why should I use this over Dapper?
 ----------------------------------
