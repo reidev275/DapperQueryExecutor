@@ -3,6 +3,10 @@ DapperQueryExecutor
 
 Leverages [Dapper's](https://github.com/SamSaffron/dapper-dot-net) simple object mapping with a command pattern approach rather than an extension method approach.
 
+Available via Nuget
+-------------------
+Install-Package DapperQueryExecutor
+
 Why should I use this over Dapper?
 ----------------------------------
 [Dapper](https://github.com/SamSaffron/dapper-dot-net) is a fantastic tool and without it this project would not be possible, but it makes unit testing your repositories difficult because it was created as an extension method to the IDBConnection interface.
