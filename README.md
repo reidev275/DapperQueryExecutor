@@ -93,7 +93,7 @@ public class DapperModule : NinjectModule
 {
   public override void Load()
   {
-    Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>();
+    Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>().InSingletonScope();
   }
 }
 ```
