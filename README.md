@@ -89,11 +89,8 @@ Usage with Ninject
 By binding all requirements for an IDapperQueryExecutor through an IOC framework we now have a central place to determine which database our app uses.
 
 ```csharp
-public class DapperModule : NinjectModule
+private static void RegisterServices(IKernel kernel)
 {
-  public override void Load()
-  {
-    Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>().InSingletonScope();
-  }
+  kernel.Bind<IDapperQueryExecutor>().To<SqlDapperQueryExecutor>().InSingletonScope();
 }
 ```
