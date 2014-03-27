@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DapperQueryExecutor
 {
@@ -9,5 +10,6 @@ namespace DapperQueryExecutor
 	{
 		int Execute(DapperQuery query);
 		IEnumerable<T> Query<T>(DapperQuery query);
+		Task<IEnumerable<T>> QueryAsync<T>(DapperQuery query);
 	}
 }

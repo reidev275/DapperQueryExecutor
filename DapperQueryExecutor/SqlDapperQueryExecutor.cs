@@ -1,6 +1,10 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Threading.Tasks;
+
 
 namespace DapperQueryExecutor
 {
@@ -26,6 +30,16 @@ namespace DapperQueryExecutor
 			{
 				connection.Open();
 				return connection.Query<T>(query.Sql, query.Parameters, query.DbTransaction, query.Buffered, query.CommandTimeout, query.CommandType);
+			}
+		}
+
+		public async Task<IEnumerable<T>> QueryAsync<T>(DapperQuery query)
+		{
+			if (query == null) throw new ArgumentNullException("query");
+			using (var connection = new SqlConnection(query.ConnectionString))
+			{
+				await connection.OpenAsync();
+				return await connection.QueryAsync<T>(query.Sql, query.Parameters, query.DbTransaction, query.CommandTimeout, query.CommandType);
 			}
 		}
 	}
